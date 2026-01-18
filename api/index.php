@@ -1,9 +1,9 @@
 <?php
 
-// Show errors for debugging
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+// Hide deprecation warnings (common in older Laravel versions on PHP 8.1+)
+ini_set('display_errors', 0);
+ini_set('display_startup_errors', 0);
+error_reporting(E_ALL & ~E_DEPRECATED & ~E_USER_DEPRECATED);
 
 // Re-route Laravel's cache files
 $_ENV['APP_CONFIG_CACHE'] = '/tmp/config.php';
